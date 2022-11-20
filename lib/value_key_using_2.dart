@@ -53,7 +53,7 @@ class _ValueKeyDemo2State extends State<ValueKeyDemo2> {
       floatingActionButton: ElevatedButton.icon(
         style: ElevatedButton.styleFrom(
           shape: StadiumBorder(),
-          primary: Colors.grey,
+          backgroundColor: Colors.grey,
           textStyle: TextStyle(fontSize: 20),
         ),
         icon: Icon(Icons.visibility_off),
@@ -72,7 +72,7 @@ class MyObject {
   MyObject(this.keyString);
 
   @override
-  bool operator ==(Object other) =>
+  bool operator == (Object other) =>
       identical(this, other) ||
       other is MyObject &&
           runtimeType == other.runtimeType &&
