@@ -36,7 +36,7 @@ class _ValueKeyDemo2State extends State<ValueKeyDemo2> {
                 ),
               ),
             TextField(
-              key: ValueKey(MyObject('email')),
+              key: ValueKey(MyObject('username')),
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
                 icon: Icon(Icons.people),
@@ -72,6 +72,8 @@ class MyObject {
   MyObject(this.keyString);
 
   @override
+
+  // переопределение оператора равенства и хэшкод
   bool operator == (Object other) =>
       identical(this, other) ||
       other is MyObject &&
