@@ -21,42 +21,43 @@ class _ValueKeyDemo3State extends State<ValueKeyDemo3> {
         centerTitle: true,
       ),
       body: ReorderableListView.builder(
-        itemBuilder: (context, index) {
-          return Card(
-            key: ValueKey(_elements[index]),
-            color: Colors.grey,
-            elevation: 1,
-            margin: EdgeInsets.all(10),
-            child: ListTile(
-              trailing: Icon(Icons.drag_handle),
-              subtitle: TextField(
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20.0,
+          itemCount: _elements.length,
+          itemBuilder: (context, index) {
+            return Card(
+              key: ValueKey(_elements[index]),
+              color: Colors.grey,
+              elevation: 1,
+              margin: EdgeInsets.all(10),
+              child: ListTile(
+                trailing: Icon(Icons.drag_handle),
+                subtitle: TextField(
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20.0,
+                  ),
+                ),
+                contentPadding: EdgeInsets.all(25.0),
+                title: Text(
+                  _elements[index],
+                  style: TextStyle(
+                    fontSize: 20.0,
+                  ),
                 ),
               ),
-              contentPadding: EdgeInsets.all(25.0),
-              title: Text(
-                _elements[index],
-                style: TextStyle(
-                  fontSize: 20.0,
-                ),
-              ),
-            ),
-          );
-        },
-        itemCount: _elements.length,
+            );
+          },
 
-        // reorder function
+          // reorder function
 
-        onReorder: (oldIndex, newIndex) => setState(() {
-          if (newIndex > oldIndex) {
-            newIndex = newIndex - 1;
-          }
-          final element = _elements.removeAt(oldIndex);
-          _elements.insert(newIndex, element);
-        }),
-      ),
+          onReorder: (oldIndex, newIndex) {
+            setState(() {
+              if (newIndex > oldIndex) {
+                newIndex = newIndex - 1;
+              }
+              final element = _elements.removeAt(oldIndex);
+              _elements.insert(newIndex, element);
+            });
+          }),
     );
   }
 }

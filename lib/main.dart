@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:value_key/value_key_using_2.dart';
+import 'package:value_key/value_key_using_3.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Value key',
-      home: ValueKeyDemo2(),
+      home: ValueKeyDemo3(),
     );
   }
 }
