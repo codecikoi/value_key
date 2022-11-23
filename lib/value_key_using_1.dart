@@ -30,6 +30,7 @@ class _ValueKeyDemo1State extends State<ValueKeyDemo1> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             ScaleAnimated(
+              key: ValueKey(counter),
               duration: Duration(
                 seconds: 2,
               ),
