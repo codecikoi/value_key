@@ -39,6 +39,7 @@ class _ValueKeyDemo1State extends State<ValueKeyDemo1> {
               ),
             ),
             ScaleAnimated(
+              key: ValueKey(counter),
               duration: Duration(
                 seconds: 2,
               ),
